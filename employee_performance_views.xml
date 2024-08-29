@@ -1,0 +1,31 @@
+<odoo>
+    <record id="employee_performance_form" model="ir.ui.view">
+        <field name="name">Employee Performance</field>
+        <field name="model">employee.performance</field>
+        <field name="type">form</field>
+		<field name="view_mode">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="employee_name"/>
+                        <field name="review_date"/>
+                        <field name="performance_rating"/>
+                        <field name="comments"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_performance_action" model="ir.actions.act_window">
+        <field name="name">Employee Performance</field>
+        <field name="res_model">employee.performance</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="employee_performance_menu" name="Employee Performance" sequence="10"/>
+    <menuitem id="employee_performance_menu_action" name="Employee Performance" parent="employee_performance_menu" action="employee_performance_action"/>
+
+</odoo>
